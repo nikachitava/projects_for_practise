@@ -1,0 +1,132 @@
+
+
+:root {
+    --deskX: 50%;
+    --deskY: 470px;
+    --ballX: 250px;
+    --ballY: 200px;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+
+}
+
+.frame {
+    width: 700px;
+    height: 500px;
+    background-color: black;
+    -webkit-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.75);;
+    overflow: hidden;
+    position: relative;
+}
+
+.pad {
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    background-color: aqua;
+    left: var(--deskX);
+    top: var(--deskY);
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+.walls {
+    //border: 1px solid red;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.wall {
+    width: 50px;
+    height: 10px;
+    background-color: blueviolet;
+    position: relative;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.walls:nth-child(8n) {
+    margin-right: 0px;
+}
+
+.ball {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    pointer-events: none;
+    left: var(--ballX);
+    top: var(--ballY);
+}
+
+.top_wall {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+   // border: 1px solid red;
+}
+.bottom_wall {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+   // border: 1px solid red;
+}
+
+.left_wall {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+   // border: 1px solid red;
+}
+
+.right_wall {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+   // border: 1px solid red;
+}
+
+.disable {
+    opacity: 0;
+}
+
+.score {
+    color: white;
+    position: absolute;
+    left: 20px;
+    font-size: 20px;
+}
+
+.over {
+    color: white;
+    font-size: 55px;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    top: 200px;
+    position: absolute;
+    pointer-events: none;
+}
+
